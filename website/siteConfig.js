@@ -43,14 +43,14 @@ const siteConfig = {
     { doc: 'api', label: 'API' },
     // { page: 'help', label: 'Help' },
     // { blog: true, label: 'Blog' },
-    // { search: true }
+    { search: true }
   ],
 
-  // algolia: {
-  //   apiKey: 'my-api-key',
-  //   indexName: 'my-index-name',
+  algolia: {
+    apiKey: '651279d797a3f4e9d32fb68c56c62c8b',
+    indexName: 'menuet_proding',
   //   algoliaOptions: {} // Optional, if provided by Algolia
-  // },
+  },
 
   // If you have users set above, you add it here:
   // users,

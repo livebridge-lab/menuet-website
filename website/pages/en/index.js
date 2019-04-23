@@ -1,10 +1,9 @@
 
 const React = require('react');
 
-const CompLibrary = require('../../core/CompLibrary.js');
-
-const Container = CompLibrary.Container;
-const GridBlock = CompLibrary.GridBlock;
+const styles = [
+  '/css/home.css'
+];
 
 class HomeSplash extends React.Component {
   render() {
@@ -15,37 +14,35 @@ class HomeSplash extends React.Component {
     const docUrl = doc => `${baseUrl}${docsPart}${langPart}${doc}`;
 
     const SplashContainer = props => (
-      <div className="homeContainer">
-        <div className="homeSplashFade">
-          <div className="wrapper homeWrapper">{props.children}</div>
+      <div className="home-container">
+        <div className="home-splash-fade">
+          <div className="wrapper home-wrapper">{props.children}</div>
         </div>
       </div>
     );
 
     const Logo = props => (
-      <div className="projectLogo">
-        <img src={props.img_src} alt="Project Logo" />
+      <div className="project-logo">
+        <img src={props.src} alt="Project Logo" />
       </div>
     );
 
     const ProjectTitle = () => (
-      <h2 className="projectTitle">
-        {siteConfig.title}
-        <small>{siteConfig.tagline}</small>
+      <h2 className="project-title">
+        {siteConfig.tagline}
+        <small>{siteConfig.description}</small>
       </h2>
     );
 
     const PromoSection = props => (
-      <div className="section promoSection">
-        <div className="promoRow">
-          <div className="pluginRowBlock">{props.children}</div>
-        </div>
+      <div className="section promo-section">
+        <div className="promo-row">{props.children}</div>
       </div>
     );
 
     const Button = props => (
-      <div className="pluginWrapper buttonWrapper">
-        <a className="button" href={props.href} target={props.target}>
+      <div className="button-wrapper">
+        <a className={ 'button button-circle' + (props.full ? ' button-full' : '')} href={props.href} target={props.target}>
           {props.children}
         </a>
       </div>
@@ -53,13 +50,12 @@ class HomeSplash extends React.Component {
 
     return (
       <SplashContainer>
-        <Logo img_src={`${baseUrl}img/menuet.png`} />
+        <Logo src={`${baseUrl}img/home-bg.png`} />
         <div className="inner">
-          <ProjectTitle siteConfig={siteConfig} />
+          <ProjectTitle siteConfig={ siteConfig } />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html')}>Example Link</Button>
-            <Button href={docUrl('doc2.html')}>Example Link 2</Button>
+            <Button href={ docUrl('authentication') } full={ true }>开始使用</Button>
+            <Button href={ siteConfig.repoUrl } target="_blank">GitHub</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -70,80 +66,13 @@ class HomeSplash extends React.Component {
 class Index extends React.Component {
   render() {
     const {config: siteConfig, language = ''} = this.props;
-    const {baseUrl} = siteConfig;
-
-    const Block = props => (
-      <Container
-        padding={['bottom', 'top']}
-        id={props.id}
-        background={props.background}>
-        <GridBlock
-          align="center"
-          contents={props.children}
-          layout={props.layout}
-        />
-      </Container>
-    );
-
-    const Features = () => (
-      <Block layout="fourColumn">
-        {[
-          {
-            content: 'This is the content of my feature',
-            image: `${baseUrl}img/menuet.svg`,
-            imageAlign: 'top',
-            title: 'Feature One',
-          },
-          {
-            content: 'The content of my second feature',
-            image: `${baseUrl}img/menuet.svg`,
-            imageAlign: 'top',
-            title: 'Feature Two',
-          },
-        ]}
-      </Block>
-    );
-
-    const Showcase = () => {
-      if ((siteConfig.users || []).length === 0) {
-        return null;
-      }
-
-      const showcase = siteConfig.users
-        .filter(user => user.pinned)
-        .map(user => (
-          <a href={user.infoLink} key={user.infoLink}>
-            <img src={user.image} alt={user.caption} title={user.caption} />
-          </a>
-        ));
-
-      const pageUrl = page => baseUrl + (language ? `${language}/` : '') + page;
-
-      return (
-        <div className="productShowcaseSection paddingBottom">
-          <h2>Who is Using This?</h2>
-          <p>This project is used by all these people</p>
-          <div className="logos">{showcase}</div>
-          <div className="more-users">
-            <a className="button" href={pageUrl('users.html')}>
-              More {siteConfig.title} Users
-            </a>
-          </div>
-        </div>
-      );
-    };
 
     return (
       <div>
+        {styles.map(url => (
+          <link rel="stylesheet" type="text/css" href={url} key={url} />
+        ))}
         <HomeSplash siteConfig={siteConfig} language={language} />
-        <div className="mainContainer">
-          <Features />
-          {/* <FeatureCallout /> */}
-          {/* <LearnHow /> */}
-          {/* <TryOut /> */}
-          {/* <Description /> */}
-          {/* <Showcase /> */}
-        </div>
       </div>
     );
   }

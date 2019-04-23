@@ -1,0 +1,178 @@
+
+@mixin nav-pusher-resize($size: 50px) { 
+
+  $nav-height: $size - 18px;
+  $logo-height: $size - 16px;
+  $header-padding: $size + $nav-height;
+
+  .navPusher { 
+    padding-top: $header-padding;
+    min-height: calc(100vh - #{$size});
+  }
+
+  .navigationSlider { 
+    height: $logo-height;
+
+    .slidingNav ul li > a { 
+      height: $nav-height;
+    }
+  }
+
+  .fixedHeaderContainer { 
+    min-height: $size;
+
+    header > a { 
+      height: $logo-height;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .navPusher { 
+      padding-top: $size;
+    }
+
+    .docsNavContainer { 
+      top: $size;
+    }
+
+    .onPageNav { 
+      min-height: calc(100vh - #{$header-padding});
+      top: $header-padding;
+    }
+  }
+
+  @media only screen and (max-width: 1023px) { 
+    .tocActive .onPageNav { 
+      top: $header-padding + 48px;
+    }
+
+    .navigationSlider .slidingNav ul { 
+      margin-top: $size;
+    }
+
+    .fixedHeaderContainer {
+      min-height: $size + $nav-height;
+    }
+  }
+}
+
+@mixin header(
+  $color,
+  $border, 
+  $background, 
+  $height: 50px) { 
+    
+  @include nav-pusher-resize($height);
+
+  .fixedHeaderContainer {
+    border-bottom: $border;
+    background: $background;
+
+    header h3,
+    header .headerTitleWithLogo { 
+      color: $color;
+    }
+  }
+}
+
+@mixin header-nav(
+  $color,
+  $color-active,
+  $background,
+  $background-active,
+  $transition: (color .2s, background .2s)) { 
+
+  .navigationSlider .slidingNav ul { 
+    background: $background;
+    
+    li > a { 
+      color: $color;
+      transition: $transition;
+    }
+
+    li > a:hover, 
+    li > a:focus, 
+    li.siteNavItemActive > a,
+    li.siteNavGroupActive > a { 
+      color: $color-active;
+      background: $background-active;
+    }
+  }
+}
+
+@mixin search-bar(
+  $color, 
+  $background, 
+  $background-focus, 
+  $border, 
+  $border-focus, 
+  $transition: (background-color .4s, width .4s, border .4s)
+  ) { 
+
+  .reactNavSearchWrapper { 
+
+    input#search_input_react { 
+      background-color: $background;
+      border: $border;
+      transition: $transition;
+    }
+    
+    input#search_input_react, 
+    input#search_input_react:focus { 
+      color: $color;
+      &::placeholder {
+        color: rgba($color, .2);
+      }
+    }
+    
+    input#search_input_react:focus { 
+      background-color: $background-focus;
+      border: $border-focus;
+    }
+  }
+}
+
+@mixin footer(
+  $color, 
+  $background, 
+  $border: none) {
+  .nav-footer { 
+    color: $color;
+    background-color: $background;
+    border-top: $border;
+  }
+}
+
+@mixin footer-sitemap(
+  $color, 
+  $color-hover, 
+  $margin: (2px -10px), 
+  $padding: (3px 10px)) {
+  .nav-footer .sitemap { 
+    margin: $margin;
+    padding: $padding;
+
+    a { 
+      color: $color;
+      &:focus,
+      &:hover { 
+        color: $color-hover;
+      }
+    }
+  }
+}
+
+@mixin footer-copyright(
+  $color, 
+  $font-size: 1em,
+  $border: none, 
+  $margin: 0, 
+  $padding: 0) {
+  .nav-footer .copyright {
+    color: $color;
+    font-size: 14px;
+    border-top: $border;
+    margin: $margin;
+    padding: $padding;
+  }
+}

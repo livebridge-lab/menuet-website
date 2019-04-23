@@ -23,6 +23,7 @@
 const siteConfig = {
   title: 'Menuet', // Title for your website.
   tagline: 'Node.js 后台轻量级框架',
+  description: '规范 Web 后台开发，快速打造高质量的企业级应用',
   url: 'https://your-docusaurus-test-site.com', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -30,8 +31,8 @@ const siteConfig = {
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
-  projectName: 'Menuet',
-  organizationName: 'Livebridge',
+  projectName: 'menuet',
+  organizationName: 'livebridge',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
@@ -42,26 +43,26 @@ const siteConfig = {
     { doc: 'api', label: 'API' },
     // { page: 'help', label: 'Help' },
     // { blog: true, label: 'Blog' },
-    { search: true }
+    // { search: true }
   ],
 
-  algolia: {
-    apiKey: 'my-api-key',
-    indexName: 'my-index-name',
-    algoliaOptions: {} // Optional, if provided by Algolia
-  },
+  // algolia: {
+  //   apiKey: 'my-api-key',
+  //   indexName: 'my-index-name',
+  //   algoliaOptions: {} // Optional, if provided by Algolia
+  // },
 
   // If you have users set above, you add it here:
   // users,
 
   /* path to images for header/footer */
   headerIcon: 'img/menuet.svg',
-  footerIcon: 'img/menuet.svg',
-  favicon: 'img/favicon.png',
+  footerIcon: 'img/menuet.png',
+  favicon: 'img/menuet.png',
 
   /* Colors for website */
   colors: {
-    primaryColor: '#68b983',
+    primaryColor: '#46bc7e',
     secondaryColor: '#205C3B',
   },
 
@@ -80,7 +81,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} livebridge.com MIT License 辽ICP备8888888号-1`,
+  copyright: `Copyright © ${new Date().getFullYear()} CodeDance MIT License 辽ICP备8888888号-1`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
@@ -106,7 +107,11 @@ const siteConfig = {
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-  //   repoUrl: 'https://github.com/facebook/test-site',
+  repoUrl: 'https://github.com/livebridge-lab/menuet',
+
+  scrollToTop: true, 
+
+  separateCss: ['static/css/home']
 };
 
 module.exports = siteConfig;

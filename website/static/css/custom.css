@@ -1,34 +1,257 @@
 /* your custom css */
+.button {
+  padding: .5em 1.6em;
+  font-size: 16px;
+  font-weight: 300;
+  border: 1px solid transparent;
+  position: relative;
+  background-color: #FFF;
+  background-clip: padding-box;
+  -webkit-transition: background .3s, -webkit-box-shadow .3s;
+  transition: background .3s, -webkit-box-shadow .3s;
+  transition: background .3s, box-shadow .3s;
+  transition: background .3s, box-shadow .3s, -webkit-box-shadow .3s;
+  text-transform: unset;
+  cursor: pointer;
+}
 
-body { 
-  color: #333;
+.button::after {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  z-index: -1;
+  content: '';
+  background: -webkit-gradient(linear, left bottom, right top, from(#46bc7e), to(#31aaab));
+  background: linear-gradient(to top right, #46bc7e, #31aaab);
+  border-radius: inherit;
+}
+
+.button:hover {
+  background: #fff;
+  color: #46bc7e;
+  background-clip: padding-box;
+  -webkit-box-shadow: 3px 4px 8px #46bc7e;
+          box-shadow: 3px 4px 8px #46bc7e;
+}
+
+.button.button-circle {
+  border-radius: 38px;
+}
+
+.button.button-full {
+  background: -webkit-gradient(linear, left bottom, right top, from(#46bc7e), to(#31aaab));
+  background: linear-gradient(to top right, #46bc7e, #31aaab);
+  color: #fff;
+  -webkit-transition: -webkit-box-shadow .3s;
+  transition: -webkit-box-shadow .3s;
+  transition: box-shadow .3s;
+  transition: box-shadow .3s, -webkit-box-shadow .3s;
+}
+
+.button.button-full::after {
+  content: none;
+}
+
+.navPusher {
+  padding-top: 102px;
+  min-height: calc(100vh - 60px);
+}
+
+.navigationSlider {
+  height: 44px;
+}
+
+.navigationSlider .slidingNav ul li > a {
+  height: 42px;
 }
 
 .fixedHeaderContainer {
-  border-bottom: 1px solid #f0f0f0;
-  color: #333 !important;
-  background-color: #FFF;
+  min-height: 60px;
 }
 
-.fixedHeaderContainer a { 
-  color: #333;
-}
-
-.nav-site a { 
-  color: #333 !important;
-}
-
-@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+.fixedHeaderContainer header > a {
+  height: 44px;
 }
 
 @media only screen and (min-width: 1024px) {
+  .navPusher {
+    padding-top: 60px;
+  }
+  .docsNavContainer {
+    top: 60px;
+  }
+  .onPageNav {
+    min-height: calc(100vh - 102px);
+    top: 102px;
+  }
 }
 
 @media only screen and (max-width: 1023px) {
+  .tocActive .onPageNav {
+    top: 150px;
+  }
+  .navigationSlider .slidingNav ul {
+    margin-top: 60px;
+  }
 }
 
-@media only screen and (min-width: 1400px) {
+.fixedHeaderContainer {
+  border-bottom: 1px solid #e6e6e6;
+  background: #fff;
+}
+
+.fixedHeaderContainer header h3,
+.fixedHeaderContainer header .headerTitleWithLogo {
+  color: #333;
+}
+
+@media only screen and (max-width: 1023px) {
+  .navigationSlider .slidingNav ul {
+    border-bottom: 1px solid #e6e6e6;
+  }
+}
+
+.navigationSlider .slidingNav ul {
+  background: #fff;
+}
+
+.navigationSlider .slidingNav ul li > a {
+  color: #333;
+  -webkit-transition: color 0.2s, background 0.2s;
+  transition: color 0.2s, background 0.2s;
+}
+
+.navigationSlider .slidingNav ul li > a:hover,
+.navigationSlider .slidingNav ul li > a:focus,
+.navigationSlider .slidingNav ul li.siteNavItemActive > a,
+.navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+  color: #46bc7e;
+  background: #fff;
+}
+
+.reactNavSearchWrapper input#search_input_react {
+  background-color: #f7f7f7;
+  border: 1px solid transparent;
+  -webkit-transition: background-color 0.4s, width 0.4s, border 0.4s;
+  transition: background-color 0.4s, width 0.4s, border 0.4s;
+}
+
+.reactNavSearchWrapper input#search_input_react,
+.reactNavSearchWrapper input#search_input_react:focus {
+  color: #333;
+}
+
+.reactNavSearchWrapper input#search_input_react::-webkit-input-placeholder,
+.reactNavSearchWrapper input#search_input_react:focus::-webkit-input-placeholder {
+  color: rgba(51, 51, 51, 0.2);
+}
+
+.reactNavSearchWrapper input#search_input_react:-ms-input-placeholder,
+.reactNavSearchWrapper input#search_input_react:focus:-ms-input-placeholder {
+  color: rgba(51, 51, 51, 0.2);
+}
+
+.reactNavSearchWrapper input#search_input_react::-ms-input-placeholder,
+.reactNavSearchWrapper input#search_input_react:focus::-ms-input-placeholder {
+  color: rgba(51, 51, 51, 0.2);
+}
+
+.reactNavSearchWrapper input#search_input_react::placeholder,
+.reactNavSearchWrapper input#search_input_react:focus::placeholder {
+  color: rgba(51, 51, 51, 0.2);
+}
+
+.reactNavSearchWrapper input#search_input_react:focus {
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+}
+
+.fixedHeaderContainer header .headerTitleWithLogo {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.navigationSlider .slidingNav ul li > a {
+  border-bottom: 2px solid transparent;
+}
+
+.navigationSlider .slidingNav ul li.siteNavItemActive > a,
+.navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+  border-bottom: 2px solid #46bc7e;
+}
+
+.nav-footer {
+  color: #333;
+  background-color: #fcfcfc;
+  border-top: 1px solid #e6e6e6;
+}
+
+.nav-footer .sitemap {
+  margin: 0 auto 3em;
+  padding: 0 20px;
+}
+
+.nav-footer .sitemap a {
+  color: #999;
+}
+
+.nav-footer .sitemap a:focus, .nav-footer .sitemap a:hover {
+  color: #777;
+}
+
+.nav-footer .copyright {
+  color: #bbb;
+  font-size: 14px;
+  border-top: 1px solid #efefef;
+  margin: 0;
+  padding: 1em;
+}
+
+.nav-footer .sitemap h4 {
+  font-weight: 400;
+}
+
+.nav-footer .sitemap .code-dance {
+  margin-top: 3em;
+}
+
+.nav-footer .sitemap .code-dance img {
+  width: 150px;
+}
+
+@media only screen and (max-width: 1023px) {
+  .reactNavSearchWrapper.navSearchWrapper {
+    top: 12px;
+  }
+  .reactNavSearchWrapper input#search_input_react {
+    line-height: 26px;
+    border-radius: 26px;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .nav-footer .sitemap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: calc(100% - 4em);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .nav-footer .sitemap .company-logo {
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
+    text-align: right;
+  }
 }
 
 @media only screen and (min-width: 1500px) {
+  .nav-footer .sitemap {
+    max-width: 1180px;
+  }
 }

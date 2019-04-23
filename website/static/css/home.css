@@ -1,0 +1,131 @@
+.home-container {
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home-splash-fade {
+  width: 100%;
+}
+
+.home-wrapper {
+  min-height: 500px;
+  position: relative;
+}
+
+.button-wrapper {
+  padding: 0 6px;
+}
+
+.project-title {
+  font-size: 300%;
+  margin: 0.3em 0;
+  padding: 2.5em 0 1em;
+  font-weight: 300;
+}
+
+.project-title > small {
+  display: block;
+  font-weight: 100;
+  font-size: 50%;
+  line-height: 1em;
+  margin: 0.7em 0 1.3em;
+  color: #888;
+}
+
+.project-logo {
+  display: none;
+  pointer-events: none;
+}
+
+.project-logo img {
+  height: 400px;
+}
+
+.promo-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  font-size: 125%;
+  line-height: 1.6em;
+  position: relative;
+  z-index: 99;
+}
+
+.promo-section .promo-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  margin: 0 -2px;
+}
+
+@media only screen and (max-width: 1023px) {
+  .home-container {
+    text-align: center;
+  }
+  .home-wrapper {
+    min-height: 450px;
+  }
+  .promo-section .promo-row {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 736px) {
+  .project-title {
+    font-size: 200%;
+  }
+  .home-wrapper {
+    min-height: 350px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .project-logo {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    left: 0;
+    padding: 2em 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .home-container {
+    max-height: 800px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .home-wrapper {
+    max-width: 1100px;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .home-wrapper {
+    max-width: 1200px;
+  }
+}

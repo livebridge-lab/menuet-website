@@ -25,7 +25,7 @@ class Footer extends React.Component {
     return (
       <footer className="nav-footer" id="footer">
         <section className="sitemap">
-          <a href={this.props.config.baseUrl} className="nav-home">
+          {/* <a href={this.props.config.baseUrl} className="nav-home">
             {this.props.config.footerIcon && (
               <img
                 src={this.props.config.baseUrl + this.props.config.footerIcon}
@@ -34,43 +34,19 @@ class Footer extends React.Component {
                 height="58"
               />
             )}
-          </a>
+          </a> */}
           <div>
-            <h5>Docs</h5>
-            <a href={this.docUrl('doc1.html')}>
-              Getting Started (or other categories)
+            <h4>链接</h4>
+            <a href={this.props.config.repoUrl} target="_blank">
+              代码仓库
             </a>
             <a href={this.docUrl('doc2.html')}>
-              Guides (or other categories)
+              常见问题
             </a>
-            <a href={this.docUrl('doc3.html')}>
-              API Reference (or other categories)
+            <a href={this.props.config.repoUrl + '/issues'} target="_blank">
+              Issues
             </a>
-          </div>
-          <div>
-            <h5>Community</h5>
-            <a href={this.pageUrl('users.html')}>
-              User Showcase
-            </a>
-            <a
-              href="http://stackoverflow.com/questions/tagged/"
-              target="_blank"
-              rel="noreferrer noopener">
-              Stack Overflow
-            </a>
-            <a href="https://discordapp.com/">Project Chat</a>
-            <a
-              href="https://twitter.com/"
-              target="_blank"
-              rel="noreferrer noopener">
-              Twitter
-            </a>
-          </div>
-          <div>
-            <h5>More</h5>
-            <a href={`${this.props.config.baseUrl}blog`}>Blog</a>
-            <a href="https://github.com/">GitHub</a>
-            <a
+            {/* <a
               className="github-button"
               href={this.props.config.repoUrl}
               data-icon="octicon-star"
@@ -79,22 +55,33 @@ class Footer extends React.Component {
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star this project on GitHub">
               Star
+            </a> */}
+          </div>
+          <div>
+            <h4>更多产品</h4>
+            <a href={this.pageUrl('users.html')}>
+              Codelet - 快速开发框架
+            </a>
+            <a
+              href="https://www.proding.net/"
+              target="_blank"
+              rel="noreferrer noopener">
+              CodingEX - 开发规范与最佳实践
+            </a>
+            <a href="https://discordapp.com/">
+              Softeaming - 软件团队协作工具
+            </a>
+            <a href="https://tangram.proding.net/" target="_blank">
+              ng-tangram - Angular UI 组件库
             </a>
           </div>
+          <div className="company-logo">
+            <a className="code-dance">
+              <img src={this.props.config.baseUrl + 'img/code-dance.png'} />
+            </a>
+          </div>
+          
         </section>
-
-        <a
-          href="https://opensource.facebook.com/"
-          target="_blank"
-          rel="noreferrer noopener"
-          className="fbOpenSource">
-          <img
-            src={`${this.props.config.baseUrl}img/oss_logo.png`}
-            alt="Facebook Open Source"
-            width="170"
-            height="45"
-          />
-        </a>
         <section className="copyright">{this.props.config.copyright}</section>
       </footer>
     );

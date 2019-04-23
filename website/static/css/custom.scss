@@ -1,0 +1,122 @@
+/* your custom css */
+
+@import '../../themes/variables';
+@import '../../themes/mixins';
+@import '../../themes/components';
+
+@include button($primary-color, $primary-color-dark);
+
+@include header(
+  $color: $header-font-color, 
+  $border: $nav-border, 
+  $background: $white, 
+  $height: 60px
+);
+
+@include header-nav(
+  $color: $header-font-color,
+  $color-active: $primary-color,
+  $background: $white, 
+  $background-active: $white
+);
+
+@include search-bar(
+  $color: $header-font-color, 
+  $background: #f7f7f7, 
+  $background-focus: $white, 
+  $border: (1px solid transparent), 
+  $border-focus: (1px solid #e7e7e7), 
+);
+
+.fixedHeaderContainer header .headerTitleWithLogo { 
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.navigationSlider .slidingNav ul { 
+  li > a { 
+    border-bottom: 2px solid transparent;
+  }
+  
+  li.siteNavItemActive > a, 
+  li.siteNavGroupActive > a {
+    border-bottom: 2px solid $primary-color;
+  }
+}
+
+@include footer(
+  $color: $header-font-color, 
+  $background: #fcfcfc, 
+  $border: $nav-border
+);
+
+@include footer-sitemap(
+  $color: #999, 
+  $color-hover: #777, 
+  $margin: 0 auto 3em,
+  $padding: 0 20px
+);
+
+@include footer-copyright(
+  $color: #bbb,
+  $font-size: 14px, 
+  $border: (1px solid #efefef),
+  $padding: 1em
+);
+
+.nav-footer .sitemap { 
+  h4 { 
+    font-weight: 400;
+  }
+
+  .code-dance { 
+    margin-top: 3em;
+    img { 
+      width: 150px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+
+  .reactNavSearchWrapper { 
+
+    &.navSearchWrapper { 
+      top: 12px;
+    }
+    
+    input#search_input_react { 
+      line-height: 26px;
+      border-radius: 26px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1023px) {
+  .nav-footer .sitemap {
+    flex-direction: column;
+    width: calc(100% - 4em);
+  }
+}
+
+@media only screen and (max-width: 736px) {
+
+}
+
+@media only screen and (min-width: 1024px) {
+  .nav-footer .sitemap .company-logo { 
+    flex: 2;
+    text-align: right;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+
+}
+
+@media only screen and (min-width: 1500px) {
+  .nav-footer .sitemap {
+    max-width: 1180px;
+  }
+}

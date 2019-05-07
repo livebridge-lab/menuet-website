@@ -39,8 +39,8 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc: 'authentication', label: '文档' },
-    { doc: 'api', label: 'API' },
+    { doc: 'intro', label: '指南' },
+    // { doc: 'api', label: 'API' },
     // { page: 'help', label: 'Help' },
     // { blog: true, label: 'Blog' },
     { search: true }
@@ -81,7 +81,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} CodeDance MIT License 辽ICP备8888888号-1`,
+  copyright: `©${new Date().getFullYear()} CodeDance MIT License 辽ICP备8888888号-1`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.

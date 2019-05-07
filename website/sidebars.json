@@ -1,10 +1,19 @@
 {
   "docs": {
-    "Docusaurus": ["authentication"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
-  },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
+    "Menuet": [
+      "intro", 
+      "build-api-docs"
+    ],
+    "定义": [
+      "define-utilities",
+      "define-models",
+      "define-services",
+      "define-controllers",
+      "define-routes",
+      "define-json-schema",
+      "define-interceptors",
+      "define-resolvers"
+      
+    ]
   }
 }

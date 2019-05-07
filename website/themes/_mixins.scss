@@ -175,4 +175,10 @@
     margin: $margin;
     padding: $padding;
   }
+
+  .nav-footer .sitemap > div { 
+    flex: none;
+    flex-shrink: 0;
+    min-width: 300px;
+  }
 }

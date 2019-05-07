@@ -95,6 +95,9 @@
   .navigationSlider .slidingNav ul {
     margin-top: 60px;
   }
+  .fixedHeaderContainer {
+    min-height: 102px;
+  }
 }
 
 .fixedHeaderContainer {
@@ -105,12 +108,6 @@
 .fixedHeaderContainer header h3,
 .fixedHeaderContainer header .headerTitleWithLogo {
   color: #333;
-}
-
-@media only screen and (max-width: 1023px) {
-  .navigationSlider .slidingNav ul {
-    border-bottom: 1px solid #e6e6e6;
-  }
 }
 
 .navigationSlider .slidingNav ul {
@@ -207,6 +204,15 @@
   border-top: 1px solid #efefef;
   margin: 0;
   padding: 1em;
+}
+
+.nav-footer .sitemap > div {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  min-width: 300px;
 }
 
 .nav-footer .sitemap h4 {

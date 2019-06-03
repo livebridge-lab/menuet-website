@@ -7,7 +7,7 @@
     "write-translations": "docusaurus-write-translations",
     "version": "docusaurus-version",
     "rename-version": "docusaurus-rename-version",
-    "publish": "scp -r ./build/menuet/* root@39.106.49.60:/var/www/menuet-website/"
+    "publish": "scp -r ./build/menuet/* root@39.105.124.168:/var/www/menuet-docs/"
   },
   "devDependencies": {
     "docusaurus": "^2.0.0-alpha.5"

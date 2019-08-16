@@ -24,7 +24,7 @@ const siteConfig = {
   title: 'Menuet', // Title for your website.
   tagline: 'Node.js 后台轻量级框架',
   description: '规范 Web 后台开发，快速打造高质量的企业级应用',
-  url: 'https://menuet.proding.net', // Your website URL
+  url: 'https://menuetjs.com', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
@@ -109,7 +109,7 @@ const siteConfig = {
   // template. For example, if you need your repo's URL...
   repoUrl: 'https://github.com/livebridge-lab/menuet',
 
-  scrollToTop: true, 
+  scrollToTop: true,
 
   separateCss: ['static/css/home']
 };

@@ -59,16 +59,16 @@ class Footer extends React.Component {
           </div>
           <div>
             <h4>更多产品</h4>
-            <a href="https://codelet.proding.net" target="_blank">
-              Codelet - 快速开发框架
+            <a href="https://codelet.net" target="_blank">
+              Codelet - 企业级开发框架
             </a>
-            <a href="https://codingex.proding.net/" target="_blank">
+            <a href="https://codingex.net" target="_blank">
               CodingEX - 开发规范与最佳实践
             </a>
-            <a>
+            <a href="https://softeaming.net" target="_blank">
               Softeaming - 软件团队协作工具
             </a>
-            <a href="https://tangram.proding.net/" target="_blank">
+            <a href="https://tangramui.com" target="_blank">
               NG-TANGRAM - Angular 桌面端 UI 组件库
             </a>
           </div>
@@ -77,7 +77,7 @@ class Footer extends React.Component {
               <img src={this.props.config.baseUrl + 'img/code-dance.png'} />
             </a>
           </div>
-          
+
         </section>
         <section className="copyright">{this.props.config.copyright}</section>
       </footer>
